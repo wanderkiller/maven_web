@@ -30,7 +30,6 @@ public class UserManager {
 				users.add(u);
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
 			DB.closeResultSet(rs);
@@ -75,7 +74,6 @@ public class UserManager {
 				u.setrDate(rs.getTimestamp("rdate"));
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
 			DB.closeResultSet(rs);

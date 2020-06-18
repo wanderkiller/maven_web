@@ -5,10 +5,8 @@
   Time: 9:13 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page import="com.liutianfu.tools.User" %>
-<%@ page import="com.liutianfu.tools.UserManager" %>
-<%@ page import="com.liutianfu.tools.UserNotFoundException" %>
-<%@ page import="com.liutianfu.tools.PasswordNotCorrectException" %>
+<%@ page import="com.liutianfu.tools.*" %>
+<%@ page import="com.liutianfu.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String login = request.getParameter("action");
@@ -41,6 +39,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <base href="<%=basePath%>">
+
     <title>登陆页面</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -69,25 +69,30 @@
             <br>
             <br>
             <div class="form row justify-content-center">
-                <form class="form-horizontal" id="login_form">
+                <form action="login.jsp" method="post" class="form-horizontal" id="login_form">
+                    <input type="hidden" name="action" value="login"/>
                     <h3 class="form-title justify-content-center">登录</h3>
                     <div class="justify-content-center">
                         <div class="form-group">
                             <i class="fa fa-user fa-lg"></i>
-                            <input class="form-control required" type="text" placeholder="用户名" name="username"
-                                   autofocus="autofocus" maxlength="20"/>
+                            <label>
+                                <input class="form-control required" type="text" placeholder="用户名" name="userName"
+                                       autofocus="autofocus" maxlength="20"/>
+                            </label>
                         </div>
                         <div class="form-group">
                             <i class="fa fa-lock fa-lg"></i>
-                            <input class="form-control required" type="password" placeholder="密码" name="password"
-                                   maxlength="8"/>
+                            <label>
+                                <input class="form-control required" type="password" placeholder="密码" name="userPassword"
+                                       maxlength="8"/>
+                            </label>
                         </div>
                         <div class="form-group">
                             <label class="checkbox">
                                 <input type="checkbox" name="remember" value="1"/> 记住我
                             </label>
                             <hr/>
-                            <a href="signup.jsp" id="register_btn" class="">创建账号</a>
+                            <a href="register.jsp" id="register_btn" class="">创建账号</a>
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btn btn-success pull-right" value="登录 "/>
