@@ -5,31 +5,32 @@
   Time: 5:28 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8" %>
 <%
     String path = request.getContextPath();
-    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
 <%@ include file="sessionCheck.jsp" %>
 <%
     request.setCharacterEncoding("utf-8");
     String action = request.getParameter("action");
-    if(action != null && action.equals("modify")){
+    if (action != null && action.equals("modify")) {
         String username = request.getParameter("username");
         //String password = request.getParameter("password");
         String phone = request.getParameter("phone");
         String addr = request.getParameter("addr");
-        if(username != null && !username.trim().equals("")){
+        if (username != null && !username.trim().equals("")) {
             u.userUpdate(username, phone, addr);
         }
 %>
 <!--这里会有个问题应为缓存没有清理，session中还是保留原来的user信息，所以看到前面user的信息是不变的-->
 <!--弹出成功的提示-->
-<script type="text/javascript" >
+<script type="text/javascript">
     alert("修改成功");
     //跳转到登陆页面
-    window.location='index.jsp'
-</script> ;
+    window.location = 'index.jsp'
+</script>
+;
 <%
         return;//下面的内容就不执行了
     }
@@ -39,9 +40,12 @@
 <head>
     <base href="<%=basePath%>">
     <title>账号管理</title>
-    <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="cache-control" content="no-cache">
-    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link href="static/css/bootstrap.css" rel="stylesheet">
     <link href="static/css/custom_global.css" rel="stylesheet">
 </head>
 
@@ -65,41 +69,7 @@
         </a><%}%>
     </div>
 </nav>
-<center>
-    <form action="account.jsp" method="post">
-        <input type="hidden" name="action" value="modify" />
-        <table border="1" width="80%" align="center">
-            <tr>
-                <td colspan="2" align="center">用户信息修改</td>
-            </tr>
-            <tr>
-                <td>用户姓名：</td>
-                <td><input type="text" name="username" value="<%=u.getUsername() %>" /></td>
-            </tr>
-            <!--
-   				<tr>
-   					<td>密码：</td>
-   					<td><input type="password" name="password" <%=u.getPassword() %> /></td>
-   				</tr>
-   				 -->
-            <tr>
-                <td>联系电话：</td>
-                <td><input type="text" name="phone" value="<%=u.getPhone() %>" /> </td>
-            </tr>
-            <tr>
-                <td>地址:</td>
-                <td><textarea rows="8" cols="60" name="addr"  ><%=u.getAddr()%></textarea></td>
-            </tr>
-            <tr>
-                <td colspan="2" align="center">
-                    <input type="submit" value="提交" />
-                    <input type="reset" value="重置" />
-                </td>
-            </tr>
-        </table>
 
-    </form>
-</center>
 <div class="container">
     <div class="py-5 text-center">
         <h2>个人中心</h2>
@@ -108,38 +78,40 @@
     <div class="col-md-8 offset-2 ">
         <h4 class="mb-3">账号详情</h4>
         <form class="needs-validation" action="account.jsp" method="post">
+            <input type="hidden" name="action" value="modify"/>
             <div class="mb-3">
-                <label for="username">用户名</label>
+                <label>用户名</label>
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text">@</span>
                     </div>
-                    <input type="text" class="form-control" id="username" placeholder="Username" value="<%=u.getUsername() %>" required>
+                    <input type="text" class="form-control" name="username" placeholder="Username"
+                           value="<%=u.getUsername() %>" required>
                 </div>
             </div>
 
             <div class="mb-3">
-                <label for="email">电子邮箱</label>
-                <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                <label>电子邮箱</label>
+                <input type="email" class="form-control" name="email" placeholder="you@example.com">
             </div>
             <div class="mb-3">
-                <label for="address2">手机号 <span class="text-muted"></span></label>
-                <input type="text" class="form-control" name="phone" value="<%=u.getPhone() %>" />
+                <label>手机号 <span class="text-muted"></span></label>
+                <input type="text" class="form-control" name="phone" value="<%=u.getPhone() %>"/>
             </div>
             <div class="mb-3">
-                <label for="address">地址</label>
-                <input type="text" class="form-control" id="address" placeholder="具体到街道" required>
+                <label>地址</label>
+                <input type="text" class="form-control" name="addr" placeholder="具体到街道" required>
             </div>
 
             <div class="mb-3">
-                <label for="address2">地址 2 <span class="text-muted">(可选)</span></label>
-                <input type="text" class="form-control" id="address2" placeholder="具体门牌号">
+                <label>地址 2 <span class="text-muted">(可选)</span></label>
+                <input type="text" class="form-control" name="address2" placeholder="具体门牌号">
             </div>
 
             <div class="row">
                 <div class="col-md-5 mb-3">
-                    <label for="country">国家和地区</label>
-                    <select class="custom-select d-block w-100" id="country" required>
+                    <label>国家和地区</label>
+                    <select class="custom-select d-block w-100" name="country" required>
                         <option value="">选择...</option>
                         <option>中国大陆</option>
                         <option>中国香港</option>
@@ -149,7 +121,7 @@
                     </select>
                 </div>
                 <div class="col-md-4 mb-3">
-                    <label for="state">省份</label>
+                    <label>省份</label>
                     <select class="custom-select d-block w-100" id="state" required>
                         <option value="">选择...</option>
                         <option>北京</option>
@@ -174,21 +146,35 @@
             </div>
             <hr class="mb-4">
             <div class="row">
-                <button class="col-md-5 btn btn-primary btn-lg btn-block" type="submit">提交</button>
-                <button class="col-md-5 offset-md-2 btn btn-danger btn-lg btn-block" onclick="window.location.href='logout.jsp'">退出</button>
-
+                <button class="col-md-5 btn btn-dark" type="submit">提交</button>
+                <button class="col-md-5 offset-md-2 btn btn-danger"
+                        onclick="window.location.href='logout.jsp'">退出
+                </button>
             </div>
         </form>
     </div>
 </div>
-
-<footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">&copy; 2017-2020 Company Name</p>
-    <ul class="list-inline">
-        <li class="list-inline-item"><a href="#">Privacy</a></li>
-        <li class="list-inline-item"><a href="#">Terms</a></li>
-        <li class="list-inline-item"><a href="#">Support</a></li>
-    </ul>
+<footer class="container py-5 item_link text-muted">
+    <div class="row">
+        <div class="col-6 col-md">
+            <ul class="list-unstyled">
+                <li class="float-left">Built with <a href="https://getbootstrap.com/">Bootstrap</a>, an open source
+                    project
+                    by <a href="https://twitter.com">Twitter, Inc.</a></li>
+                <li class="float-left">Database: <a href="https://www.mysql.com/">MySQL</a>, a trademark owned by
+                    <a href="https://www.oracle.com">Oracle, Corp.</a></li>
+                <li class="float-left">Thanks to <a href="https://www.jetbrains.com">JetBrains s.r.o.</a> for the free
+                    educational subscription.
+                </li>
+                <li class="float-left">Boosted by <a href="https://www.jsdelivr.com">Jsdelivr</a> for the fast web browsing experience.
+                </li>
+            </ul>
+        </div>
+        <div class="col-6 col-md">
+            <p class="text-small float-right">Copyright © 2020 刘天赋 @ <a href="http://www.hbnu.edu.cn/">HBNU</a>. All Rights
+                Reserverd. </p>
+        </div>
+    </div>
 </footer>
 </body>
 </html>

@@ -20,8 +20,13 @@
 %>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>项目首页</title>
-    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link href="static/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="static/css/custom_global.css">
 </head>
 <body>
@@ -78,15 +83,25 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-<footer class="container py-3 item_link">
+<footer class="container py-5 item_link text-muted">
     <div class="row">
         <div class="col-6 col-md">
-            <p class="text-small">Copyright © 2020 刘天赋 @ <a href="http://www.hbnu.edu.cn/">HBNU</a>. All Rights
-                Reserverd. </p>
+            <ul class="list-unstyled">
+                <li class="float-left">Built with <a href="https://getbootstrap.com/">Bootstrap</a>, an open source
+                    project
+                    by <a href="https://twitter.com">Twitter, Inc.</a></li>
+                <li class="float-left">Database: <a href="https://www.mysql.com/">MySQL</a>, a trademark owned by
+                    <a href="https://www.oracle.com">Oracle, Corp.</a></li>
+                <li class="float-left">Thanks to <a href="https://www.jetbrains.com">JetBrains s.r.o.</a> for the free
+                    educational subscription.
+                </li>
+                <li class="float-left">Boosted by <a href="https://www.jsdelivr.com">Jsdelivr</a> for the fast web browsing experience.
+                </li>
+            </ul>
         </div>
         <div class="col-6 col-md">
-            <p class="float-right">Built with <a href="https://getbootstrap.com/">Bootstrap</a>, an open source project
-                by <a href="https://twitter.com">Twitter, Inc.</a></p>
+            <p class="text-small float-right">Copyright © 2020 刘天赋 @ <a href="http://www.hbnu.edu.cn/">HBNU</a>. All Rights
+                Reserverd. </p>
         </div>
     </div>
 </footer>

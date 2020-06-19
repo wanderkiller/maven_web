@@ -75,13 +75,8 @@
             </a><%}%>
         </div>
     </nav>
-    <div class="container align-items-baseline">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="form row justify-content-center">
+    <div class="container">
+        <div class="py-lg-5 form row justify-content-center">
             <form action="login.jsp" method="post" class="form-horizontal" id="login_form">
                 <input type="hidden" name="action" value="login"/>
                 <h3 class="form-title justify-content-center">登录</h3>
@@ -105,21 +100,37 @@
                             <input type="checkbox" name="remember" value="1"/> 记住我
                         </label>
                         <hr/>
-                        <a href="register.jsp" id="register_btn" class="">创建账号</a>
+                        <a href="register.jsp" id="register_btn" class="item_link">创建账号</a>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-success pull-right" value="登录 "/>
+                        <input type="submit" class="btn btn-dark pull-right" value="登录 "/>
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
-<div class="container">
-    <footer class="card-footer bg-light"><p class="float-left">Copyright © 2020 刘天赋 @ <a href="http://www.hbnu.edu.cn/">HBNU</a>.
-        All Rights Reserverd. </p>
-        <p class="float-right">Built with <a href="https://getbootstrap.com/">Bootstrap</a>, an open source project by
-            <a href="https://twitter.com">Twitter, Inc.</a></p></footer>
-</div>
+<footer class="container py-5 item_link text-muted">
+    <div class="row">
+        <div class="col-6 col-md">
+            <ul class="list-unstyled">
+                <li class="float-left">Built with <a href="https://getbootstrap.com/">Bootstrap</a>, an open source
+                    project
+                    by <a href="https://twitter.com">Twitter, Inc.</a></li>
+                <li class="float-left">Database: <a href="https://www.mysql.com/">MySQL</a>, a trademark owned by
+                    <a href="https://www.oracle.com">Oracle, Corp.</a></li>
+                <li class="float-left">Thanks to <a href="https://www.jetbrains.com">JetBrains s.r.o.</a> for the free
+                    educational subscription.
+                </li>
+                <li class="float-left">Boosted by <a href="https://www.jsdelivr.com">Jsdelivr</a> for the fast web browsing experience.
+                </li>
+            </ul>
+        </div>
+        <div class="col-6 col-md">
+            <p class="text-small float-right">Copyright © 2020 刘天赋 @ <a href="http://www.hbnu.edu.cn/">HBNU</a>. All Rights
+                Reserverd. </p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
