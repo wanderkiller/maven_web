@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import com.liutianfu.tools.util.*;
 
+import javax.servlet.http.HttpSession;
+
 public class User {
 	private int id;
 	private String username;

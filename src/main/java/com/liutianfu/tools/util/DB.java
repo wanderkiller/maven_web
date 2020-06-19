@@ -11,7 +11,7 @@ public class DB {//数据库工具类
 
 	static{//因为每次访问数据库都要通过Class.forName()，所以设置为静态模块
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}

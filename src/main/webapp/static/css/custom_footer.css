@@ -1,0 +1,4 @@
+.item_link {
+    color: #999;
+    transition: ease-in-out color .15s;
+}

@@ -6,44 +6,42 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" import="java.util.*" %>
+<%@ page import="com.liutianfu.tools.*" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+%>
+<%
+    User u = (User) session.getAttribute("user");
+%>
+<%
+    List<Product> products = ProductMgr.getInstance().getRecentProducts(6);
+%>
 <html>
 <head>
     <title>项目首页</title>
     <link rel="stylesheet" href="static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="static/css/custom.css">
-    <script type="text/javascript" src="static/js/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="static/css/custom_global.css">
 </head>
 <body>
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
-    <div class="container">
-        <a class="navbar-brand" href="#">J2ee项目</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.jsp">主页<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="shop.jsp">商品</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="cart.jsp">购物车</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.jsp">个人中心</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0" action="https://www.baidu.com/baidu" target="_blank">
-                <input name=tn type=hidden value=baidu>
-                <input class="form-control mr-sm-2" type="text" name="word" placeholder="输入搜索内容" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
-            </form>
-        </div>
+<nav class="site-header sticky-top py-1 row">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2 d-none d-md-inline-block" href="index.jsp">J2ee项目</a>
+        <a class="py-2 d-none d-md-inline-block" href="index.jsp">主页</a>
+        <a class="py-2 d-none d-md-inline-block" href="shop.jsp">商店</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">博客</a>
+        <a class="py-2 d-none d-md-inline-block" href="cart.jsp">购物车</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">推广页</a>
+        <%
+            if (u == null) {
+        %>
+        <a class="py-2 float-md-left" href="login.jsp">登录</a>
+        <%
+        } else {
+        %>
+        <a class="py-2 d-none d-md-inline-block" href="account.jsp">欢迎您: <%=u.getUsername()%>
+        </a><%}%>
     </div>
 </nav>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -80,8 +78,20 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-<div class="container">
-    <footer class="card-footer bg-light"><p class="float-left">Copyright © 2020 刘天赋 @ <a href="http://www.hbnu.edu.cn/">HBNU</a>. All Rights Reserverd. </p> <p class="float-right">Built with <a href="https://getbootstrap.com/">Bootstrap</a>, an open source project by <a href="https://twitter.com">Twitter, Inc.</a> </p> </footer>
-</div>
+<footer class="container py-3 item_link">
+    <div class="row">
+        <div class="col-6 col-md">
+            <p class="text-small">Copyright © 2020 刘天赋 @ <a href="http://www.hbnu.edu.cn/">HBNU</a>. All Rights
+                Reserverd. </p>
+        </div>
+        <div class="col-6 col-md">
+            <p class="float-right">Built with <a href="https://getbootstrap.com/">Bootstrap</a>, an open source project
+                by <a href="https://twitter.com">Twitter, Inc.</a></p>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript" src="static/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="static/js/bootstrap-hover-dropdown.js"></script>
 </body>
 </html>
