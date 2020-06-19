@@ -42,9 +42,8 @@
     <base href="<%=basePath%>">
 
     <title>登陆页面</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"
-          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="http://qbzzanv01.bkt.clouddn.com/css/custom.css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/custom.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
             crossorigin="anonymous"></script>
@@ -55,14 +54,38 @@
 </head>
 <body>
     <div class="bg-login">
-        <nav class="navbar navbar-fixed-top my-navbar" role="navigation">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">J2EE项目</a>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
+            <div class="container">
+                <a class="navbar-brand" href="#">J2ee项目</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.jsp">主页<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.jsp">商品</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cart.jsp">购物车</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.jsp">个人中心</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0" action="https://www.baidu.com/baidu" target="_blank">
+                        <input name=tn type=hidden value=baidu>
+                        <input class="form-control mr-sm-2" type="text" name="word" placeholder="输入搜索内容" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
+                    </form>
                 </div>
             </div>
         </nav>
-        <div class="container">
+        <div class="container align-items-baseline">
             <br>
             <br>
             <br>
@@ -101,6 +124,9 @@
                 </form>
             </div>
         </div>
+    </div>
+    <div class="container">
+        <footer class="card-footer bg-light"><p class="float-left">Copyright © 2020 刘天赋 @ <a href="http://www.hbnu.edu.cn/">HBNU</a>. All Rights Reserverd. </p> <p class="float-right">Built with <a href="https://getbootstrap.com/">Bootstrap</a>, an open source project by <a href="https://twitter.com">Twitter, Inc.</a> </p> </footer>
     </div>
 </body>
 </html>
