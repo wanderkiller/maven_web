@@ -65,7 +65,7 @@
             <%
                 if (u == null) {
             %>
-            <a class="py-2 float-md-left" href="login.jsp">注册账号</a>
+            <a class="py-2 float-md-left" href="register.jsp">注册账号</a>
             <%
             } else {
             %>

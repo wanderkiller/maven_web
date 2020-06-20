@@ -37,16 +37,16 @@ public class OrderMgr {
         orderDAO.save(so);
     }
 
-    public int getOrders(List<SalesOrder> list, int pageNo, int pageSize) {
-        return orderDAO.getOrders(list, pageNo, pageSize);
-    }
-
-    public SalesOrder loadById(int id) {
-        return orderDAO.loadById(id);
-    }
-
-    public List<SalesItem> getSalesItems(SalesOrder salesOrder) {
-        // TODO Auto-generated method stub
-        return orderDAO.getSalesItems(salesOrder);
-    }
+//    public int getOrders(List<SalesOrder> list, int pageNo, int pageSize) {
+//        return orderDAO.getOrders(list, pageNo, pageSize);
+//    }
+//
+//    public SalesOrder loadById(int id) {
+//        return orderDAO.loadById(id);
+//    }
+//
+//    public List<SalesItem> getSalesItems(SalesOrder salesOrder) {
+//        // TODO Auto-generated method stub
+//        return orderDAO.getSalesItems(salesOrder);
+//    }
 }

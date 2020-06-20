@@ -55,8 +55,8 @@ public class SalesOrder {
 	public void save(){
 		OrderMgr.getInstance().save(this);
 	}
-	
-	public List<SalesItem> getItems(){
-		return OrderMgr.getInstance().getSalesItems(this);
-	}
+
+//	public List<SalesItem> getItems(){
+//		return OrderMgr.getInstance().getSalesItems(this);
+//	}
 }
