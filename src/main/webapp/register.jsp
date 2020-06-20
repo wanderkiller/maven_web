@@ -65,9 +65,8 @@
             <a class="py-2 d-none d-md-inline-block" href="index.jsp">J2ee项目</a>
             <a class="py-2 d-none d-md-inline-block" href="index.jsp">主页</a>
             <a class="py-2 d-none d-md-inline-block" href="shop.jsp">商店</a>
-            <a class="py-2 d-none d-md-inline-block" href="#">博客</a>
-            <a class="py-2 d-none d-md-inline-block" href="cart.jsp">购物车</a>
-            <a class="py-2 d-none d-md-inline-block" href="#">推广页</a>
+            <a class="py-2 d-none d-md-inline-block" href="#">活动</a>
+            <a class="py-2 d-none d-md-inline-block" href="order.jsp">订单通知</a>
             <a class="py-2 float-md-left" href="login.jsp">登录</a>
         </div>
     </nav>

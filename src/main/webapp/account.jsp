@@ -55,9 +55,8 @@
         <a class="py-2 d-none d-md-inline-block" href="index.jsp">J2ee项目</a>
         <a class="py-2 d-none d-md-inline-block" href="index.jsp">主页</a>
         <a class="py-2 d-none d-md-inline-block" href="shop.jsp">商店</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">博客</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.jsp">购物车</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">推广页</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">活动</a>
+        <a class="py-2 d-none d-md-inline-block" href="order.jsp">订单通知</a>
         <%
             if (u == null) {
         %>
@@ -100,7 +99,7 @@
             </div>
             <div class="mb-3">
                 <label>地址</label>
-                <input type="text" class="form-control" name="addr" placeholder="具体到街道" required>
+                <input type="text" class="form-control" name="addr" value="<%=u.getAddr()%>" placeholder="具体到街道" required>
             </div>
 
             <div class="mb-3">

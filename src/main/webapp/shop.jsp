@@ -37,13 +37,14 @@
         <a class="py-2 d-none d-md-inline-block" href="index.jsp">J2ee项目</a>
         <a class="py-2 d-none d-md-inline-block" href="index.jsp">主页</a>
         <a class="py-2 d-none d-md-inline-block" href="shop.jsp">商店</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">博客</a>
-        <a class="py-2 d-none d-md-inline-block" href="order.jsp">下单页</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">推广页</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">活动</a>
+        <a class="py-2 d-none d-md-inline-block" href="order.jsp">订单通知</a>
         <%
             if (u == null) {
         %>
         <a class="py-2 float-md-left" href="login.jsp">登录</a>
+        <a class="py-2 float-md-left" href="login.jsp">注册账号</a>
+
         <%
         } else {
         %>
