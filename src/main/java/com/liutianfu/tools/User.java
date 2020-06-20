@@ -1,13 +1,10 @@
 package com.liutianfu.tools;
 
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import com.liutianfu.tools.util.*;
-
-import javax.servlet.http.HttpSession;
 
 public class User {
 	private int id;
@@ -85,7 +82,6 @@ public class User {
 	}
 
 	public boolean userUpdate(String username, String phone, String addr) {
-		//这个可以设置不传参数的修改，直接
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {

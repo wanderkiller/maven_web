@@ -1,7 +1,5 @@
 package com.liutianfu.tools.dao;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.sql.*;
 
 import com.liutianfu.tools.*;
@@ -11,7 +9,6 @@ import com.liutianfu.tools.util.DB;
 public class OrderMySQLDAO {
 
     public void save(SalesOrder so) {
-        // TODO Auto-generated method stub
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rsKey = null;
@@ -27,7 +24,6 @@ public class OrderMySQLDAO {
             pstmt.setTimestamp(3, so.getOdate());
             pstmt.setInt(4, so.getStatus());
             pstmt.executeUpdate();
-            pstmt.executeBatch();
             conn.commit();//事务处理
             conn.setAutoCommit(flag);
         } catch (SQLException e) {
@@ -44,132 +40,4 @@ public class OrderMySQLDAO {
             DB.closeConnection(conn);
         }
     }
-
-//    public int getOrders(List<SalesOrder> list, int pageNo, int pageSize) {
-//        Connection conn = null;
-//        ResultSet rs = null;
-//        ResultSet rsCount = null;
-//        int pageCount = 0;
-//        try {
-//            conn = DB.getConnection();
-//            rsCount = DB.executeQuery(conn, "select count(*) from salesorder");
-//            rsCount.next();
-//            pageCount = (rsCount.getInt(1) + (pageSize - 1)) / pageSize;
-//            String sql = "select salesorder.id,salesorder.userid,salesorder.addr,salesorder.odate,salesorder.status," +
-//                    "ruser.id uid,ruser.username username,ruser.password password,ruser.phone phone,ruser.addr uaddr,ruser.rdate rdate " +
-//                    " from salesorder join ruser on (salesorder.userid=ruser.id) " +
-//                    " limit " + (pageNo - 1) * pageSize + "," + pageSize;
-//            System.out.println(sql);
-//            rs = DB.executeQuery(conn, sql);
-//            while (rs.next()) {
-//                User u = new User();
-//                u.setId(rs.getInt("uid"));
-//                u.setUsername(rs.getString("username"));
-//                u.setPassword(rs.getString("password"));
-//                u.setPhone(rs.getString("phone"));
-//                u.setAddr(rs.getString("uaddr"));
-//                u.setrDate(rs.getTimestamp("rdate"));
-//
-//                SalesOrder so = new SalesOrder();
-//                so.setId(rs.getInt("id"));
-//                so.setAddr(rs.getString("addr"));
-//                so.setOdate(rs.getTimestamp("odate"));
-//                so.setStatus(rs.getInt("status"));
-//                so.setUser(u);
-//
-//                list.add(so);
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        } finally {
-//            DB.closeResultSet(rs);
-//            DB.closeResultSet(rsCount);
-//            DB.closeConnection(conn);
-//        }
-//        return pageCount;
-//    }
-
-//    public SalesOrder loadById(int id) {
-//        Connection conn = null;
-//        ResultSet rs = null;
-//        ResultSet rsCount = null;
-//        SalesOrder so = null;
-//        try {
-//            conn = DB.getConnection();
-//            String sql = "select salesorder.id,salesorder.userid,salesorder.addr,salesorder.odate,salesorder.status," +
-//                    "ruser.id uid,ruser.username username,ruser.password password,ruser.phone phone,ruser.addr uaddr,ruser.rdate rdate " +
-//                    " from salesorder join ruser on (salesorder.userid=ruser.id) where salesorder.id =" + id;
-//            System.out.println(sql);
-//            rs = DB.executeQuery(conn, sql);
-//            while (rs.next()) {
-//                User u = new User();
-//                u.setId(rs.getInt("uid"));
-//                u.setUsername(rs.getString("username"));
-//                u.setPassword(rs.getString("password"));
-//                u.setPhone(rs.getString("phone"));
-//                u.setAddr(rs.getString("uaddr"));
-//                u.setrDate(rs.getTimestamp("rdate"));
-//
-//                so = new SalesOrder();
-//                so.setId(rs.getInt("id"));
-//                so.setAddr(rs.getString("addr"));
-//                so.setOdate(rs.getTimestamp("odate"));
-//                so.setStatus(rs.getInt("status"));
-//                so.setUser(u);
-//
-//
-//            }
-//        } catch (SQLException e) {
-//            // TODO Auto-generated catch block
-//            e.printStackTrace();
-//        } finally {
-//            DB.closeResultSet(rs);
-//            DB.closeResultSet(rsCount);
-//            DB.closeConnection(conn);
-//        }
-//        return so;
-//    }
-//
-//    public List<SalesItem> getSalesItems(SalesOrder salesOrder) {
-//        // TODO Auto-generated method stub
-//        Connection conn = null;
-//        ResultSet rs = null;
-//        List<SalesItem> list = new ArrayList<SalesItem>();
-//        try {
-//            conn = DB.getConnection();
-//            String sql = "select salesitem.id,salesitem.unitprice,salesitem.pcount,salesitem.orderid," +
-//                    "product.id pid,product.name,product.descr,product.normalprice,product.memberprice,product.pdate,product.categoryid " +
-//                    " from salesitem join product on (salesitem.productid=product.id) " +
-//                    "where salesitem.orderid=" + salesOrder.getId();
-//            System.out.println(sql);
-//            rs = DB.executeQuery(conn, sql);
-//            while (rs.next()) {
-//                Product p = new Product();
-//                p.setId(rs.getInt("pid"));
-//                p.setName(rs.getString("name"));
-//                p.setDescr(rs.getString("descr"));
-//                p.setNormalprice(rs.getDouble("normalprice"));
-//                p.setMemberprice(rs.getDouble("memberprice"));
-//                p.setPdate(rs.getTimestamp("pdate"));
-//                p.setCategoryid(rs.getInt("categoryid"));
-//
-//                SalesItem si = new SalesItem();
-//                si.setId(rs.getInt("id"));
-//                si.setProduct(p);
-//                si.setUnitPrice(rs.getDouble("unitprice"));
-//                si.setCount(rs.getInt("pcount"));
-//                si.setOrder(salesOrder);
-//                list.add(si);
-//            }
-//        } catch (SQLException e) {
-//            // TODO Auto-generated catch block
-//            e.printStackTrace();
-//        } finally {
-//            DB.closeResultSet(rs);
-//            DB.closeConnection(conn);
-//        }
-//        return list;
-//    }
-
-
 }

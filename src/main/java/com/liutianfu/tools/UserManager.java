@@ -3,7 +3,6 @@ package com.liutianfu.tools;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,20 +35,6 @@ public class UserManager {
 			DB.closeConnection(conn);
 		}
 		return users;
-	}
-
-	public static void delete(int id){
-		Connection conn = null;
-		Statement stmt = null;
-		try{
-			conn = DB.getConnection();
-			stmt = DB.getStatement(conn);
-			String sql = "delete from ruser where id = "+id;
-			stmt.executeUpdate(sql);
-		}catch(SQLException e){
-			DB.closeStatement(stmt);
-			DB.closeConnection(conn);
-		}
 	}
 
 	public static User userExits(String username,String password) throws UserNotFoundException, PasswordNotCorrectException{

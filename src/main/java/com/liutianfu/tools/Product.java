@@ -27,10 +27,6 @@ public class Product {
         this.name = name;
     }
 
-    public String getDescr() {
-        return descr;
-    }
-
     public void setDescr(String descr) {
         this.descr = descr;
     }
@@ -43,24 +39,12 @@ public class Product {
         this.normalprice = normalprice;
     }
 
-    public double getMemberprice() {
-        return memberprice;
-    }
-
     public void setMemberprice(double memberprice) {
         this.memberprice = memberprice;
     }
 
-    public Timestamp getPdate() {
-        return pdate;
-    }
-
     public void setPdate(Timestamp pdate) {
         this.pdate = pdate;
-    }
-
-    public int getCategoryid() {
-        return categoryid;
     }
 
     public void setCategoryid(int categoryid) {

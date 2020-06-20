@@ -81,15 +81,6 @@ public class DB {//数据库工具类
 		}
 	}
 
-	public static ResultSet executeQuery(Statement stmt,String sql){//获取结果集
-		ResultSet rs = null;
-		try {
-			rs = stmt.executeQuery(sql);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return rs;
-	}
 	public static ResultSet executeQuery(Connection conn,String sql){//获取结果集
 		ResultSet rs = null;
 		try {
@@ -99,21 +90,11 @@ public class DB {//数据库工具类
 		}
 		return rs;
 	}
-	public static boolean executeUpdate(Connection conn,String sql){//获取结果集
 
-		try {
-			conn.createStatement().executeUpdate(sql);
-			return true;
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return false;
-	}
 	public static void closeResultSet(ResultSet rs){//关闭结果集
 		try {
 			if(rs != null){
 				rs.close();
-				rs = null;
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

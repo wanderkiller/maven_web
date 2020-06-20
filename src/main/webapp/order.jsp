@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: xavier
+  User: liutianfu
   Date: 6/20/2020
   Time: 10:55 AM
   To change this template use File | Settings | File Templates.
@@ -11,13 +11,9 @@
 <%@ page import="java.nio.charset.StandardCharsets" %>
 <%@ include file="sessionCheck.jsp" %>
 <%
-    //    String productID = request.getParameter("productID");
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
-%>
-
-<%
-    int flag = 0;
+    int flag = 1;
     String addr = null;
     String productId = null;
     String productName_demo = null;
@@ -33,8 +29,8 @@
         so.setOdate(new Timestamp(System.currentTimeMillis()));
         so.setStatus(0);
         so.save();
-        flag = 1;
     } catch (Exception e) {
+        flag = 0;
         e.printStackTrace();
     }
 %>
