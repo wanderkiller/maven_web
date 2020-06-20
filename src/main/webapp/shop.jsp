@@ -38,7 +38,7 @@
         <a class="py-2 d-none d-md-inline-block" href="index.jsp">主页</a>
         <a class="py-2 d-none d-md-inline-block" href="shop.jsp">商店</a>
         <a class="py-2 d-none d-md-inline-block" href="#">博客</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.jsp">购物车</a>
+        <a class="py-2 d-none d-md-inline-block" href="order.jsp">下单页</a>
         <a class="py-2 d-none d-md-inline-block" href="#">推广页</a>
         <%
             if (u == null) {
@@ -67,7 +67,8 @@
     <div class="bg-dark text-center text-white overflow-hidden product">
         <div class="overlay">
             <form action="order.jsp" method="post">
-                <input type="hidden" name="productid" value="<%=p.getId()%>"/>
+                <input type="hidden" name="productId" value="<%=p.getId()%>"/>
+                <input type="hidden" name="productName" value="<%=p.getName()%>"/>
                 <button type="submit" class="overlay_button btn btn-outline-secondary">立即购买</button>
             </form>
         </div>
@@ -82,14 +83,15 @@
                     src="static/images/shop/<%=p.getId()%>.jpg" alt="product_img"></div>
     </div>
     <div class="bg-light text-center overflow-hidden product">
+        <% p = iterator.next();%>
         <div class="overlay">
             <form action="order.jsp" method="post">
-                <input type="hidden" name="productid" value="<%=p.getId()%>"/>
+                <input type="hidden" name="productId" value="<%=p.getId()%>"/>
+                <input type="hidden" name="productName" value="<%=p.getName()%>"/>
                 <button type="submit" class="overlay_button btn btn-outline-secondary">立即购买</button>
             </form>
         </div>
         <div class="my-3 p-3">
-            <% p = iterator.next();%>
             <h2 class="display-5"><%= p.getName()%>
             </h2>
             <p class="lead"><%=p.getNormalprice()%>
@@ -102,14 +104,15 @@
 
 <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
     <div class="bg-light text-center overflow-hidden product">
+        <% p = iterator.next();%>
         <div class="overlay">
             <form action="order.jsp" method="post">
-                <input type="hidden" name="productid" value="<%=p.getId()%>"/>
+                <input type="hidden" name="productId" value="<%=p.getId()%>"/>
+                <input type="hidden" name="productName" value="<%=p.getName()%>"/>
                 <button type="submit" class="overlay_button btn btn-outline-secondary">立即购买</button>
             </form>
         </div>
         <div class="my-3 p-3">
-            <% p = iterator.next();%>
             <h2 class="display-5"><%= p.getName()%>
             </h2>
             <p class="lead"><%=p.getNormalprice()%>
@@ -119,14 +122,15 @@
                 src="static/images/shop/<%=p.getId()%>.jpg" alt="product_img"></div>
     </div>
     <div class="bg-primary text-center text-white overflow-hidden product">
+        <% p = iterator.next();%>
         <div class="overlay">
             <form action="order.jsp" method="post">
-                <input type="hidden" name="productid" value="<%=p.getId()%>"/>
+                <input type="hidden" name="productId" value="<%=p.getId()%>"/>
+                <input type="hidden" name="productName" value="<%=p.getName()%>"/>
                 <button type="submit" class="overlay_button btn btn-outline-secondary">立即购买</button>
             </form>
         </div>
         <div class="my-3 py-3">
-            <% p = iterator.next();%>
             <h2 class="display-5"><%= p.getName()%>
             </h2>
             <p class="lead"><%=p.getNormalprice()%>
@@ -139,14 +143,15 @@
 
 <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
     <div class="bg-light text-center overflow-hidden product">
+        <% p = iterator.next();%>
         <div class="overlay">
             <form action="order.jsp" method="post">
-                <input type="hidden" name="productid" value="<%=p.getId()%>"/>
+                <input type="hidden" name="productId" value="<%=p.getId()%>"/>
+                <input type="hidden" name="productName" value="<%=p.getName()%>"/>
                 <button type="submit" class="overlay_button btn btn-outline-secondary">立即购买</button>
             </form>
         </div>
         <div class="my-3 p-3">
-            <% p = iterator.next();%>
             <h2 class="display-5"><%= p.getName()%>
             </h2>
             <p class="lead"><%=p.getNormalprice()%>
@@ -156,14 +161,15 @@
                 src="static/images/shop/<%=p.getId()%>.jpg" alt="product_img"></div>
     </div>
     <div class="bg-light text-center overflow-hidden product">
+        <% p = iterator.next();%>
         <div class="overlay">
             <form action="order.jsp" method="post">
-                <input type="hidden" name="productid" value="<%=p.getId()%>"/>
+                <input type="hidden" name="productId" value="<%=p.getId()%>"/>
+                <input type="hidden" name="productName" value="<%=p.getName()%>"/>
                 <button type="submit" class="overlay_button btn btn-outline-secondary">立即购买</button>
             </form>
         </div>
         <div class="my-3 py-3">
-            <% p = iterator.next();%>
             <h2 class="display-5"><%= p.getName()%>
             </h2>
             <p class="lead"><%=p.getNormalprice()%>
