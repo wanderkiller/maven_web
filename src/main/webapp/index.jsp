@@ -36,7 +36,7 @@
         <a class="py-2 d-none d-md-inline-block" href="index.jsp">主页</a>
         <a class="py-2 d-none d-md-inline-block" href="shop.jsp">商店</a>
         <a class="py-2 d-none d-md-inline-block" href="#">博客</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.jsp">购物车</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">购物车</a>
         <a class="py-2 d-none d-md-inline-block" href="#">推广页</a>
         <%
             if (u == null) {

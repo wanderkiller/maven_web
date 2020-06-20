@@ -47,9 +47,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>注册页面</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"
-          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="http://qbzzanv01.bkt.clouddn.com/css/custom.css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/custom_global.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
             crossorigin="anonymous"></script>
@@ -60,21 +59,20 @@
 <body>
 
 
-<div class="bg-login">
-    <nav class="navbar navbar-fixed-top my-navbar" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">J2EE项目</a>
-            </div>
+<div class="bg-light">
+    <nav class="site-header sticky-top py-1 row">
+        <div class="container d-flex flex-column flex-md-row justify-content-between">
+            <a class="py-2 d-none d-md-inline-block" href="index.jsp">J2ee项目</a>
+            <a class="py-2 d-none d-md-inline-block" href="index.jsp">主页</a>
+            <a class="py-2 d-none d-md-inline-block" href="shop.jsp">商店</a>
+            <a class="py-2 d-none d-md-inline-block" href="#">博客</a>
+            <a class="py-2 d-none d-md-inline-block" href="cart.jsp">购物车</a>
+            <a class="py-2 d-none d-md-inline-block" href="#">推广页</a>
+            <a class="py-2 float-md-left" href="login.jsp">登录</a>
         </div>
     </nav>
     <div class="container">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="form row justify-content-center">
+        <div class="form py-lg-5 row justify-content-center">
 <%--            选择post方式进行注册--%>
             <form action="register.jsp" method="post" class="form-horizontal" id="register_form">
                 <input type="hidden" name="action" value="register"/>
@@ -116,12 +114,35 @@
                         </label>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-success pull-right" value="提交"/>
+                        <input type="submit" class="btn btn-dark pull-right" value="提交"/>
                     </div>
                 </div>
             </form>
         </div>
     </div>
+    <footer class="container py-5 item_link text-muted">
+        <div class="row">
+            <div class="col-6 col-md">
+                <ul class="list-unstyled">
+                    <li class="float-left">Built with <a href="https://getbootstrap.com/">Bootstrap</a>, an open source
+                        project
+                        by <a href="https://twitter.com">Twitter, Inc.</a></li>
+                    <li class="float-left">Database: <a href="https://www.mysql.com/">MySQL</a>, a trademark owned by
+                        <a href="https://www.oracle.com">Oracle, Corp.</a></li>
+                    <li class="float-left">Thanks to <a href="https://www.jetbrains.com">JetBrains s.r.o.</a> for the free
+                        educational subscription.
+                    </li>
+                    <li class="float-left">Boosted by <a href="https://www.jsdelivr.com">Jsdelivr</a> for the fast web browsing experience.
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <p class="text-small float-right">Copyright © 2020 刘天赋 @ <a href="http://www.hbnu.edu.cn/">HBNU</a>. All Rights
+                    Reserverd. </p>
+            </div>
+        </div>
+    </footer>
 </div>
+
 </body>
 </html>

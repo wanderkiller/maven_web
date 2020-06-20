@@ -11,8 +11,6 @@ public class SalesOrder {
 	private String addr;
 	private Timestamp odate;
 	private int status;
-	
-	private Cart cart;
 
 	public int getId() {
 		return id;
@@ -54,14 +52,6 @@ public class SalesOrder {
 		this.status = status;
 	}
 
-	public Cart getCart() {
-		return cart;
-	}
-
-	public void setCart(Cart cart) {
-		this.cart = cart;
-	}
-	
 	public void save(){
 		OrderMgr.getInstance().save(this);
 	}

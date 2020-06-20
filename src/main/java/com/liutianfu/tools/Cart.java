@@ -1,12 +1,10 @@
 package com.liutianfu.tools;
 
-import com.liutianfu.tools.CartItem;
-
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class Cart {//������
+public class Cart {//购物篮
 	private List<CartItem> items = new ArrayList<CartItem>();
 
 	public List<CartItem> getItems() {
@@ -16,7 +14,7 @@ public class Cart {//������
 	public void setItems(List<CartItem> items) {
 		this.items = items;
 	}
-	
+
 	public void add(CartItem item){
 		for(int i = 0;i<items.size();i++){
 			CartItem ci = items.get(i);
@@ -27,7 +25,7 @@ public class Cart {//������
 		}
 		items.add(item);
 	}
-	
+
 	public double getTotalprice(){
 		double totalprice = 0;
 		for(int i = 0;i<items.size();i++){
@@ -36,5 +34,5 @@ public class Cart {//������
 		}
 		return totalprice;
 	}
-	
+
 }
