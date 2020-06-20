@@ -59,7 +59,6 @@
         <a class="py-2 d-none d-md-inline-block" href="index.jsp">J2ee项目</a>
         <a class="py-2 d-none d-md-inline-block" href="index.jsp">主页</a>
         <a class="py-2 d-none d-md-inline-block" href="shop.jsp">商店</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">活动</a>
         <a class="py-2 d-none d-md-inline-block" href="order.jsp">订单通知</a>
         <%
             if (u == null) {

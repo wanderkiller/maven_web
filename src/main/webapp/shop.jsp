@@ -76,7 +76,7 @@
         <div class="my-3 py-3">
             <h2 class="display-5"><%= p.getName()%>
             </h2>
-            <p class="lead"><%=p.getNormalprice()%>
+            <p class="lead"><%=p.getNormalprice()%>元 / 500克
             </p>
         </div>
         <div class="bd-placeholder-img" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
@@ -95,7 +95,7 @@
         <div class="my-3 p-3">
             <h2 class="display-5"><%= p.getName()%>
             </h2>
-            <p class="lead"><%=p.getNormalprice()%>
+            <p class="lead"><%=p.getNormalprice()%>元 / 500克
             </p>
         </div>
         <div class="bd-placeholder-img" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"><img
@@ -116,7 +116,7 @@
         <div class="my-3 p-3">
             <h2 class="display-5"><%= p.getName()%>
             </h2>
-            <p class="lead"><%=p.getNormalprice()%>
+            <p class="lead"><%=p.getNormalprice()%>元 / 500克
             </p>
         </div>
         <div class="bd-placeholder-img" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"><img
@@ -134,7 +134,7 @@
         <div class="my-3 py-3">
             <h2 class="display-5"><%= p.getName()%>
             </h2>
-            <p class="lead"><%=p.getNormalprice()%>
+            <p class="lead"><%=p.getNormalprice()%>元 / 500克
             </p>
         </div>
         <div class="bd-placeholder-img" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"><img
@@ -155,7 +155,7 @@
         <div class="my-3 p-3">
             <h2 class="display-5"><%= p.getName()%>
             </h2>
-            <p class="lead"><%=p.getNormalprice()%>
+            <p class="lead"><%=p.getNormalprice()%>元 / 500克
             </p>
         </div>
         <div class="bd-placeholder-img" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"><img
@@ -173,7 +173,7 @@
         <div class="my-3 py-3">
             <h2 class="display-5"><%= p.getName()%>
             </h2>
-            <p class="lead"><%=p.getNormalprice()%>
+            <p class="lead"><%=p.getNormalprice()%>元 / 500克
             </p>
         </div>
         <div class="bd-placeholder-img" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"><img
